@@ -136,3 +136,56 @@ Details on users involved in the proposals.
 
 ## Campaign for Full Proposals
 The provided data mainly focuses on the proposals, their funding, and their voting outcomes. This restructured schema offers an approach to organizing the available information into a fuller proposal specific database, focusing on the content of proposals which still have significant leftover technical debt from the scraping process. **This informs us that we should request the cleaned and structured data directly from the Project Catalyst team.**
+
+## Live Stream Transcripts
+To further explore use cases regarding AI assistants and LLM capabilities, we’ve collected over 400 transcripts from [Charles Hoskinson livestreams on YouTube](https://www.youtube.com/@charleshoskinsoncrypto/streams). The point of this collection is to enable community members with a key figure’s roadmapping, sensibilities, and general language. While Hoskinson’s live streams don’t necessarily focus on Project Catalyst, they are a single source of data which makes the prompt engineering and fine-tuning of models much clearer from a data perspective. If there were 5 different voices on the same transcript, it would be difficult for the LLM to discern names and overlapping language, which is materially more complex for the database to specify who’s who, ultimately leading to degraded LLM performance. This collection of transcripts may enable the beginning of a multi-source fine-tuning process, one which has several single sources (e.g. Charles Hoskinson) and others or individual source documentations (e.g. Project Catalyst). To access the data, please follow these instructions: 
+
+1. Navigate: https://www.wolframblockchainlabs.com/dashboard/
+2. Click here in the top right corner:
+![](images/AvailableData_2.png)
+3. Download and unzip file named “Cardano_SQL.csv” and it will be found in the table titled “Transcripts”.
+
+Here's how the dataset columns are outlined:
+- ID: A unique identifier for each video.
+- Thumbnail URL: The web address (URL) where the video's thumbnail image is located. 
+- Title: The name or title of the video. 
+- Description Snippet: A brief excerpt or snippet from the full description of the video. 
+- Duration: The length of the video in a time format (e.g., minutes:seconds). 
+- View Count: The number of times the video has been watched.
+- URL: The direct link to the video's webpage. 
+
+To see how one community member is using Charles Hoskinson transcripts, please visit and support https://www.hosksaid.com/summaries, created by [Matthew Jura](https://twitter.com/matthewjura). NOTE: WBL did not, nor does not take any credit for the application or underlying transcripts built by Matthew Jura. WBL’s collection of transcripts was inspired by his idea, which came before this open dataset.
+
+## Navigators Enabling Research
+### Accessing the Catalyst Voting Weight Dataset
+1. The voting data is housed in the same dataset as our Wolfram Governance Data
+2. Navigate: https://www.wolframblockchainlabs.com/dashboard/
+3. Click here in the top right corner:
+![](images/AvailableData_2.png?raw=true)
+4. Download and unzip file to access the “Cadano SQL” .csv file. 
+### Understanding the Banzhaf Power Index
+The Banzhaf Power Index, initially explained in the context of political science, measures the power of individual voters or groups of voters in a voting system. Unlike simple vote counting, it considers the potential influence a voter has in changing the outcome of a vote, taking into account all possible voting scenarios. In the Catalyst community, voting involves deciding on funding proposals with ADA and exists in a “1 coin 1 vote” system. The Banzhaf Power Index is adapted here to understand how voting power is distributed among various cohorts, based on the amount of ADA they control.
+### Exploring the Banzhaf Power Index in Project Catalyst
+The workflow to explore the Banzhaf Power Index in the Catalyst community involves several steps, incorporating data analysis and computational tools:
+
+1. Data Collection: Voting data from Fund 5 through Fund 11 is compiled from [LidoNation and SCATDao](https://docs.google.com/spreadsheets/d/1A4hECVCbjrf7FOIBp7SvHrp23bRx1YWV7L1hq6K_rzw/edit#gid=425452566). This data includes the number of votes (or ADA) controlled by each voter or group of voters (cohorts). This data is built into the Wolfram Governance Database found, [here](https://www.wolframblockchainlabs.com/dashboard/) (top right corner)
+![](images/voterCohorts.png?raw=true)
+
+2. Initial Analysis: Using a tool that interfaces with GPT-4, an initial analysis is conducted. This involves creating SQL queries to sift through the collected voting data. The aim is to identify basic patterns, such as the number of cohorts, the range of ADA controlled by these cohorts, and their respective voting weights.
+![](images/votingWeightAnalysis.png?raw=true)
+
+3. Calculation of Banzhaf Power Index: The core of the analysis involves calculating the Banzhaf Power Index. This requires heavy computational resources and might be conducted using a computational engine like Wolfram Language, Python, or R. The calculation involves considering all possible voting outcomes to determine the power each voter or cohort has in influencing the vote's result.
+Here is a [notebook](https://www.wolframcloud.com/obj/stephen26/Published/Banzhaf%20Power%20Index%20Calculation.nb) with code that produces the Banzhaf Power Index calculation.
+
+4. Visualization and Further Analysis: Beyond mere numbers, the workflow includes steps to visualize the data. This might involve generating bar charts or other graphical representations to make the distribution of voting power more understandable. Such visualizations help in identifying which cohorts have the most significant influence on voting outcomes.
+![](images/cohortVotingOutcomes.png?raw=true)
+
+5. Quadratic Voting Simulation: An advanced step in the analysis involves simulating a quadratic voting scenario. Quadratic voting is a method where the aim is to balance the voting power more equitably among participants by mitigating the inequality in size of voting weight. This simulation helps in assessing how the distribution of voting power might change under a different voting mechanism.
+![](images/quadraticVotingSim.png)
+
+6. Comparative Analysis: Finally, the workflow involves comparing the Banzhaf Power Index across different funds (e.g., from Fund 5 to Fund 11). This comparison sheds light on trends in voting power distribution over time, indicating whether the voting process is becoming more decentralized or if power remains concentrated within specific cohorts.
+
+The workflow described not only provides a methodological approach to understanding voting power within the Catalyst community but also democratizes access to this analysis. By leveraging computational tools and language models, community members who may not have deep technical expertise can still explore complex concepts like the Banzhaf Power Index. This inclusive approach encourages broader participation in the governance of the Catalyst fund, ultimately contributing to a more informed and engaged community.
+
+To see the notebook, click [here](https://www.wolframcloud.com/obj/stephen26/Published/Voting%20Data%20-%20Banzhaf%20Power%20Index%20-%20ChatNB%20gpt-4%202024-03-14.nb). To see the video, click [here](https://amoeba.wolfram.com/index.php/s/sckA2BMdD9fgZTr).
+
