@@ -14,7 +14,8 @@ Additionally, we must gather as much instructional content related to participat
 1. Navigate: https://www.wolframblockchainlabs.com/dashboard/
 2. Click here in the top right corner:
 ![](images/AvailableData_2.png?raw=true)
-3. Download and unzip file to access the “Cadano SQL Dump” data
+3. Click on “Wolfram Governance Data”, the first link in the drop down menu.
+4. Download and unzip file to access the “Cadano_SQL” data.
 ### Exploring the Database
 1. Topologically, here is the database diagram: https://dbdiagram.io/d/Cardano-Governance-Database-655ddcf53be14957878114c7
 2. Screenshot of database diagram:
@@ -105,7 +106,8 @@ Provides how tables are interconnected through various foreign keys, ensuring re
 1. Navigate: https://www.wolframblockchainlabs.com/dashboard/
 2. Click here in the top right corner:
 ![](images/AvailableData_2.png?raw=true)
-3. Download and unzip file named “proposals_metadata_merged_with_full_proposals.csv”
+3. Click on “Catalyst Proposal Data”, the second link in the drop down menu.
+4. Download and unzip file named “proposals_metadata_merged_with_full_proposals.csv”
 
 This table contains details about each proposal submitted for funding. Importantly, this dataset was provided by LidoNation. However, it’s assumed that during the scraping phase of the gathering of full proposal content from Ideascale, there were errors, bugs and limitations in the scraping mechanisms. This led to a significant number of gaps that WBL was unable to merge properly. This is an ongoing “final mile” aspect of a cleaning and structuring a secondary database of full Catalyst proposals. Some of the identified gaps between the Wolfram Governance Database and this one are in the image on the following page:
 
@@ -143,7 +145,9 @@ To further explore use cases regarding AI assistants and LLM capabilities, we’
 1. Navigate: https://www.wolframblockchainlabs.com/dashboard/
 2. Click here in the top right corner:
 ![](images/AvailableData_2.png)
-3. Download and unzip file named “Cardano_SQL.csv” and it will be found in the table titled “Transcripts”.
+3. Click on “Wolfram Governance Data”, the first link in the drop down menu.
+4. Download and unzip file named “Cardano SQL” and it will be found in the table titled “Transcripts”.
+
 
 Here's how the dataset columns are outlined:
 - ID: A unique identifier for each video.
@@ -162,7 +166,9 @@ To see how one community member is using Charles Hoskinson transcripts, please v
 2. Navigate: https://www.wolframblockchainlabs.com/dashboard/
 3. Click here in the top right corner:
 ![](images/AvailableData_2.png?raw=true)
-4. Download and unzip file to access the “Cadano SQL” .csv file. 
+4. Click on “Wolfram Governance Data”, the first link in the drop down menu.
+5. Download and unzip file to access the “Cadano SQL”, this will have a table called “Voting Data”. 
+ 
 ### Understanding the Banzhaf Power Index
 The Banzhaf Power Index, initially explained in the context of political science, measures the power of individual voters or groups of voters in a voting system. Unlike simple vote counting, it considers the potential influence a voter has in changing the outcome of a vote, taking into account all possible voting scenarios. In the Catalyst community, voting involves deciding on funding proposals with ADA and exists in a “1 coin 1 vote” system. The Banzhaf Power Index is adapted here to understand how voting power is distributed among various cohorts, based on the amount of ADA they control.
 ### Exploring the Banzhaf Power Index in Project Catalyst
